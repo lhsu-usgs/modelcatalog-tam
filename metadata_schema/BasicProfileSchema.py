@@ -15,14 +15,53 @@ class ModelTypeEnum(str, Enum):
     tool = "tool"
     testbed = "testbed"
 
+"""Definitions
+    model = a representation of a system via physics, mathematics, or empirical data, that can be used to approximate
+        the system in question and used to conduct research or apply research to a management application
+    framework = a modeling system composed of multiple component models or modules, which themselves could be described
+        by a model catalog item. Sometimes known as a coupled model (Example: COAWST, HayWired, National Seismic Hazard Mapping Project)
+    tool = a tool is not the model algorithm or code itself, but either 1) an interface built to facilitate
+        interaction between a user and the model, or 2) a pre-processing or post-processing program used to prepare
+        inputs or outputs for the model algorithm
+    testbed = Infrastructure that allows you to understand model and data integration and performance (See, for
+        example, https://www.ilamb.org/, or the USGS HyTest project)
+"""
+
 
 class TypeKeywordEnum(str, Enum):
-    theoretical = "Theoretical"
+
+    analytical = "Analytical"
+    conceptual = "Conceptual"
+    data_driven = "Data-Driven"
+    deterministic = "Deterministic"
     empirical = "Empirical"
+    geospatial = "Geospatial"
+    mathematical = "Mathematical"
+    numerical = "Numerical"
+    mechanistic = "Mechanistic"
     physics_based = "Physics-based"
     process_based = "Process-based"
     statistical = "Statistical"
-    geospatial = "Geospatial"
+    stochastic = "Stochastic"
+    
+    
+
+"""Definitions
+    Analytical = Analytical models are mathematical models that have a closed form solution, i.e. the solution to the equations used to describe changes in a system can be expressed as a mathematical analytic function. (https://serc.carleton.edu/introgeo/mathstatmodels/Analytical.html)
+    Conceptual = A conceptual model is a representation of a system, made of the composition of concepts
+        which are used to help people know, understand, or simulate a subject the model represents. 
+    Data-Driven = 
+    Deterministic = the output of the model is fully determined by the parameter values and the initial conditions (set of inputs);
+    Empirical = refers to any kind of computer modeling based on empirical/experimental observations rather than on mathematically describable relationships of the system modeled;
+    Geospatial =
+    Mathematical = a description of a system using mathematical concepts and language
+    Mechanistic = assumes that a complex system can be understood by examining the workings of its individual parts and the manner in which they are coupled. Mechanistic models typically have a tangible, physical aspect, in that system components are real, solid and visible;
+    Numerical = Numerical models are mathematical models that use some sort of numerical time-stepping procedure to obtain the models behavior over time. (SERC https://serc.carleton.edu/introgeo/mathstatmodels/Numerical.html)
+    Physics-based = using equations based on laws of physics
+    Process-based = based on a theoretical understanding of relevant physical processes
+    Statistical = a mathematical model that embodies a set of statistical assumptions concerning the generation of sample data (and similar data from a larger population) (wikipedia)
+    Stochastic = also called a probabilistic model, incorporates random variables and probability distributions into the model of an event or phenomenon. While a deterministic model gives a single possible outcome for an event, a probabilistic model gives a probability distribution as a solution;
+"""
 
 
 class BasicProfile(BaseModel):
